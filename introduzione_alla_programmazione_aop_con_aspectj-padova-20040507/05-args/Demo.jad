@@ -1,0 +1,53 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Demo.java
+
+import java.io.PrintStream;
+import org.aspectj.runtime.internal.AroundClosure;
+
+public class Demo
+{
+
+    public static void main(String args[])
+    {
+        Demo d = new Demo();
+        d.go();
+    }
+
+    public Demo()
+    {
+    }
+
+    public void go()
+    {
+        metodo1("PAR1");
+        System.out.println("passo 100 a Metodo2 [" + metodo2(100) + "]");
+    }
+
+    public void metodo1(String s)
+    {
+        String s1 = s;
+        metodo1_aroundBody1$advice(this, s1, Logging.aspectOf(), null);
+    }
+
+    public String metodo2(int n)
+    {
+        System.out.println("Metodo2 chiamato con parametro numerico [" + n + "]");
+        return "valore di ritorno*2 (" + n * 2 + ")";
+    }
+
+    static final void metodo1_aroundBody0(Demo demo, String s)
+    {
+        System.out.println("Metodo1 chiamato con parametro stringa [" + s + "]");
+    }
+
+    static final void metodo1_aroundBody1$advice(Logging this, AroundClosure ajc_aroundClosure, Logging logging, AroundClosure aroundclosure)
+    {
+        System.out.println("" + System.currentTimeMillis());
+        System.out.println("Prima");
+        AroundClosure aroundclosure1 = aroundclosure;
+        metodo1_aroundBody0(this, ajc_aroundClosure);
+        System.out.println("Dopo");
+    }
+}

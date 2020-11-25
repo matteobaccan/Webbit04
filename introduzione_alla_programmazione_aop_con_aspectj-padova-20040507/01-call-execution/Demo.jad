@@ -1,0 +1,71 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Demo.java
+
+import java.io.PrintStream;
+import org.aspectj.runtime.internal.AroundClosure;
+
+public class Demo
+{
+
+    public static void main(String args[])
+    {
+        Demo d = new Demo();
+        d.go();
+    }
+
+    public Demo()
+    {
+        cVar = "";
+    }
+
+    public void go()
+    {
+        String s = "PAR1";
+        Demo demo = this;
+        metodo1_aroundBody1$advice(this, demo, s, Logging.aspectOf(), null);
+        System.out.println("passo 100 a Metodo2 [" + metodo2(100) + "]");
+    }
+
+    public void metodo1(String cPar)
+    {
+        System.out.println("Metodo1 chiamato con parametro stringa [" + cPar + "]");
+    }
+
+    public String metodo2(int i)
+    {
+        int j = i;
+        return metodo2_aroundBody3$advice(this, j, Logging.aspectOf(), null);
+    }
+
+    static final void metodo1_aroundBody0(Demo demo, Demo demo1, String s)
+    {
+        demo1.metodo1(s);
+    }
+
+    static final void metodo1_aroundBody1$advice(Logging this, AroundClosure ajc_aroundClosure, String s, Logging logging, AroundClosure aroundclosure)
+    {
+        System.out.println("Prima");
+        AroundClosure aroundclosure1 = aroundclosure;
+        metodo1_aroundBody0(this, ajc_aroundClosure, s);
+        System.out.println("Dopo");
+    }
+
+    static final String metodo2_aroundBody2(Demo demo, int i)
+    {
+        System.out.println("Metodo2 chiamato con parametro numerico [" + i + "]");
+        return "valore di ritorno*2 (" + i * 2 + ")";
+    }
+
+    static final String metodo2_aroundBody3$advice(Logging this, AroundClosure ajc_aroundClosure, String cRet, AroundClosure aroundclosure)
+    {
+        System.out.println("Prima2");
+        AroundClosure aroundclosure1 = aroundclosure;
+        String s = metodo2_aroundBody2(this, ajc_aroundClosure);
+        System.out.println("Dopo2");
+        return s;
+    }
+
+    public String cVar;
+}

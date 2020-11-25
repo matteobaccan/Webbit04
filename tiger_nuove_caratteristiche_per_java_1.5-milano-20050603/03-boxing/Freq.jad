@@ -1,0 +1,31 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Freq.java
+
+import java.io.PrintStream;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Freq
+{
+
+    public Freq()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        TreeMap treemap = new TreeMap();
+        for(int i = 0; i < args.length; i++)
+        {
+            Integer integer = (Integer)treemap.get(args[i]);
+            treemap.put(args[i], integer != null ? ((Object) (new Integer(integer.intValue() + 1))) : ((Object) (ONE)));
+        }
+
+        System.out.println(treemap);
+    }
+
+    private static final Integer ONE = new Integer(1);
+
+}

@@ -1,0 +1,31 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Demo.java
+
+import java.io.PrintStream;
+
+public class Demo
+{
+
+    public static void main(String args[])
+    {
+        Demo d = new Demo();
+        d.go();
+        d.go2();
+    }
+
+    public Demo()
+    {
+    }
+
+    public void go()
+    {
+        System.out.println("Ciao");
+    }
+
+    public void go2()
+    {
+        System.out.println("Ciao2");
+    }
+}

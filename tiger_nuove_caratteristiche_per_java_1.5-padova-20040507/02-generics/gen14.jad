@@ -1,0 +1,27 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   gen14.java
+
+import java.io.PrintStream;
+import java.util.LinkedList;
+import java.util.List;
+
+public class gen14
+{
+
+    public gen14()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        LinkedList linkedlist = new LinkedList();
+        linkedlist.add(new Integer(2));
+        linkedlist.add("String");
+        Integer integer = (Integer)linkedlist.get(0);
+        Integer integer1 = (Integer)linkedlist.get(1);
+        System.out.println("*" + integer.intValue() + "*");
+        System.out.println("*" + integer1.intValue() + "*");
+    }
+}

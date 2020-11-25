@@ -1,0 +1,46 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Demo.java
+
+import java.io.PrintStream;
+
+public class Demo
+{
+
+    public static void main(String args[])
+    {
+        Demo d = new Demo();
+        d.go();
+    }
+
+    public Demo()
+    {
+    }
+
+    public void go()
+    {
+        this;
+        "PAR1";
+        metodo1();
+        break MISSING_BLOCK_LABEL_18;
+        Throwable throwable;
+        throwable;
+        Logging.aspectOf().ajc$after$Logging$5a();
+        throw throwable;
+        Logging.aspectOf().ajc$after$Logging$5a();
+        System.out.println("passo 100 a Metodo2 [" + metodo2(100) + "]");
+        return;
+    }
+
+    public void metodo1(String cPar)
+    {
+        System.out.println("Metodo1 chiamato con parametro stringa [" + cPar + "]");
+    }
+
+    public String metodo2(int n)
+    {
+        System.out.println("Metodo2 chiamato con parametro numerico [" + n + "]");
+        return "valore di ritorno*2 (" + n * 2 + ")";
+    }
+}

@@ -1,0 +1,137 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Demo.java
+
+import java.io.PrintStream;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.Signature;
+import org.aspectj.runtime.internal.AroundClosure;
+import org.aspectj.runtime.internal.Conversions;
+import org.aspectj.runtime.reflect.Factory;
+
+public class Demo
+{
+
+    public static void main(String args[])
+    {
+        String args1[] = args;
+        Object aobj[] = new Object[1];
+        aobj[0] = args1;
+        JoinPoint joinpoint = Factory.makeJP(ajc$tjp_0, null, null, aobj);
+        main_aroundBody1$advice(args1, joinpoint, Logger.aspectOf(), null, ajc$tjp_0, joinpoint);
+    }
+
+    public Demo()
+    {
+    }
+
+    public void go()
+    {
+        Object aobj[];
+        JoinPoint joinpoint = Factory.makeJP(ajc$tjp_1, this, this, aobj = new Object[0]);
+        go_aroundBody3$advice(this, joinpoint, Logger.aspectOf(), null, ajc$tjp_1, joinpoint);
+    }
+
+    public void metodo1(String s)
+    {
+        String s1 = s;
+        Object aobj[] = new Object[1];
+        aobj[0] = s1;
+        JoinPoint joinpoint = Factory.makeJP(ajc$tjp_2, this, this, aobj);
+        metodo1_aroundBody5$advice(this, s1, joinpoint, Logger.aspectOf(), null, ajc$tjp_2, joinpoint);
+    }
+
+    public String metodo2(int i)
+    {
+        int j = i;
+        Object aobj[] = new Object[1];
+        aobj[0] = Conversions.intObject(j);
+        JoinPoint joinpoint = Factory.makeJP(ajc$tjp_3, this, this, aobj);
+        return (String)metodo2_aroundBody7$advice(this, j, joinpoint, Logger.aspectOf(), null, ajc$tjp_3, joinpoint);
+    }
+
+    static final void main_aroundBody0(String as[], JoinPoint joinpoint)
+    {
+        Demo demo = new Demo();
+        demo.go();
+    }
+
+    static final Object main_aroundBody1$advice(Logger this, AroundClosure ajc_aroundClosure, org.aspectj.lang.JoinPoint.StaticPart thisJoinPointStaticPart, JoinPoint thisJoinPoint, Object result, JoinPoint joinpoint)
+    {
+        System.out.println("Metodo invocato: " + ((org.aspectj.lang.JoinPoint.StaticPart) (result)).getSignature().getDeclaringType().getName() + "." + ((org.aspectj.lang.JoinPoint.StaticPart) (result)).getSignature().getName());
+        Logger.ajc$inlineAccessMethod$Logger$Logger$printParameters(joinpoint);
+        System.out.println("Esecuzione metodo:");
+        JoinPoint joinpoint1 = thisJoinPoint;
+        main_aroundBody0(this, ajc_aroundClosure);
+        Object obj = null;
+        System.out.println("Valore di ritorno: " + obj);
+        return obj;
+    }
+
+    static final void go_aroundBody2(Demo demo, JoinPoint joinpoint)
+    {
+        demo.metodo1("PAR1");
+        System.out.println("passo 100 a Metodo2 [" + demo.metodo2(100) + "]");
+    }
+
+    static final Object go_aroundBody3$advice(Logger this, AroundClosure ajc_aroundClosure, org.aspectj.lang.JoinPoint.StaticPart thisJoinPointStaticPart, JoinPoint thisJoinPoint, Object result, JoinPoint joinpoint)
+    {
+        System.out.println("Metodo invocato: " + ((org.aspectj.lang.JoinPoint.StaticPart) (result)).getSignature().getDeclaringType().getName() + "." + ((org.aspectj.lang.JoinPoint.StaticPart) (result)).getSignature().getName());
+        Logger.ajc$inlineAccessMethod$Logger$Logger$printParameters(joinpoint);
+        System.out.println("Esecuzione metodo:");
+        JoinPoint joinpoint1 = thisJoinPoint;
+        go_aroundBody2(this, ajc_aroundClosure);
+        Object obj = null;
+        System.out.println("Valore di ritorno: " + obj);
+        return obj;
+    }
+
+    static final void metodo1_aroundBody4(Demo demo, String s, JoinPoint joinpoint)
+    {
+        System.out.println("Metodo1 chiamato con parametro stringa [" + s + "]");
+    }
+
+    static final Object metodo1_aroundBody5$advice(Logger this, AroundClosure ajc_aroundClosure, org.aspectj.lang.JoinPoint.StaticPart thisJoinPointStaticPart, JoinPoint thisJoinPoint, Object result, org.aspectj.lang.JoinPoint.StaticPart staticpart, JoinPoint joinpoint)
+    {
+        System.out.println("Metodo invocato: " + staticpart.getSignature().getDeclaringType().getName() + "." + staticpart.getSignature().getName());
+        Logger.ajc$inlineAccessMethod$Logger$Logger$printParameters(joinpoint);
+        System.out.println("Esecuzione metodo:");
+        Object obj1 = result;
+        metodo1_aroundBody4(this, ajc_aroundClosure, thisJoinPointStaticPart);
+        Object obj = null;
+        System.out.println("Valore di ritorno: " + obj);
+        return obj;
+    }
+
+    static final String metodo2_aroundBody6(Demo demo, int i, JoinPoint joinpoint)
+    {
+        System.out.println("Metodo2 chiamato con parametro numerico [" + i + "]");
+        return "valore di ritorno*2 (" + i * 2 + ")";
+    }
+
+    static final Object metodo2_aroundBody7$advice(Logger this, AroundClosure ajc_aroundClosure, org.aspectj.lang.JoinPoint.StaticPart thisJoinPointStaticPart, JoinPoint thisJoinPoint, Object result, org.aspectj.lang.JoinPoint.StaticPart staticpart, JoinPoint joinpoint)
+    {
+        System.out.println("Metodo invocato: " + staticpart.getSignature().getDeclaringType().getName() + "." + staticpart.getSignature().getName());
+        Logger.ajc$inlineAccessMethod$Logger$Logger$printParameters(joinpoint);
+        System.out.println("Esecuzione metodo:");
+        Object obj = result;
+        String s = metodo2_aroundBody6(this, ajc_aroundClosure, thisJoinPointStaticPart);
+        System.out.println("Valore di ritorno: " + s);
+        return s;
+    }
+
+    public static final org.aspectj.lang.JoinPoint.StaticPart ajc$tjp_0;
+    public static final org.aspectj.lang.JoinPoint.StaticPart ajc$tjp_1;
+    public static final org.aspectj.lang.JoinPoint.StaticPart ajc$tjp_2;
+    public static final org.aspectj.lang.JoinPoint.StaticPart ajc$tjp_3;
+
+    static 
+    {
+        Factory factory = new Factory("Demo.java", Class.forName("Demo"));
+        ajc$tjp_0 = factory.makeSJP("method-execution", factory.makeMethodSig("9-main-Demo-[Ljava.lang.String;:-args:--void-"), 3);
+        ajc$tjp_1 = factory.makeSJP("method-execution", factory.makeMethodSig("1-go-Demo----void-"), 10);
+        ajc$tjp_2 = factory.makeSJP("method-execution", factory.makeMethodSig("1-metodo1-Demo-java.lang.String:-cPar:--void-"), 15);
+        ajc$tjp_3 = factory.makeSJP("method-execution", factory.makeMethodSig("1-metodo2-Demo-int:-n:--java.lang.String-"), 19);
+    }
+}

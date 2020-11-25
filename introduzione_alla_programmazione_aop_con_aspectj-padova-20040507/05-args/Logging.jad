@@ -1,0 +1,77 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Logger.java
+
+import java.io.PrintStream;
+import org.aspectj.lang.NoAspectBoundException;
+import org.aspectj.runtime.internal.AroundClosure;
+import org.aspectj.runtime.internal.Conversions;
+
+public class Logging
+{
+
+    Logging()
+    {
+    }
+
+    public void ajc$around$Logging$d0(AroundClosure ajc_aroundClosure)
+    {
+        System.out.println("" + System.currentTimeMillis());
+        System.out.println("Prima");
+        ajc$around$Logging$d0proceed(ajc_aroundClosure);
+        System.out.println("Dopo");
+    }
+
+    static void ajc$around$Logging$d0proceed(Logging this)
+        throws Throwable
+    {
+        Conversions.voidValue(this.run(new Object[0]));
+    }
+
+    public int ajc$around$Logging$19e(AroundClosure ajc_aroundClosure)
+    {
+        System.out.println("Prima int");
+        int i = ajc$around$Logging$19eproceed(ajc_aroundClosure);
+        System.out.println("Dopo int");
+        return i;
+    }
+
+    static int ajc$around$Logging$19eproceed(Logging this)
+        throws Throwable
+    {
+        return Conversions.intValue(this.run(new Object[0]));
+    }
+
+    public static final boolean ajc$if_0()
+    {
+        return System.currentTimeMillis() > 10L;
+    }
+
+    public static Logging aspectOf()
+    {
+        ajc$perSingletonInstance;
+        if(ajc$perSingletonInstance == null) goto _L2; else goto _L1
+_L1:
+        return;
+_L2:
+        throw new NoAspectBoundException();
+    }
+
+    public static boolean hasAspect()
+    {
+        return ajc$perSingletonInstance != null;
+    }
+
+    private static void ajc$postClinit()
+    {
+        ajc$perSingletonInstance = new Logging();
+    }
+
+    public static final Logging ajc$perSingletonInstance;
+
+    static 
+    {
+        ajc$postClinit();
+    }
+}

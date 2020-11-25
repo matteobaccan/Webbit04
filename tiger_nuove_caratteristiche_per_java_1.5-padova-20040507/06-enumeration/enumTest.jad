@@ -1,0 +1,183 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   enumTest.java
+
+import java.io.PrintStream;
+
+public class enumTest
+{
+    public static class nomieta extends Enum
+    {
+
+        public static final nomieta[] values()
+        {
+            return (nomieta[])_2B_VALUES.clone();
+        }
+
+        public static nomieta valueOf(String s)
+        {
+            nomieta anomieta[] = _2B_VALUES;
+            int i = anomieta.length;
+            for(int j = 0; j < i; j++)
+            {
+                nomieta nomieta1 = anomieta[j];
+                if(nomieta1.name().equals(s))
+                    return nomieta1;
+            }
+
+            throw new IllegalArgumentException(s);
+        }
+
+        public int eta()
+        {
+            return eta;
+        }
+
+        public volatile int compareTo(Enum enum)
+        {
+            return super.compareTo((nomieta)enum);
+        }
+
+        public static final native nomieta matteo;
+        public static final native nomieta carlo;
+        public static final native nomieta raffaele;
+        private final int eta;
+        private static final nomieta _2B_VALUES[];
+
+        static 
+        {
+            matteo = new nomieta("matteo", 0, 33);
+            carlo = new nomieta("carlo", 1, 29);
+            raffaele = new nomieta("raffaele", 2, 55);
+            _2B_VALUES = (new nomieta[] {
+                matteo, carlo, raffaele
+            });
+        }
+
+        nomieta(String s, int i, int j)
+        {
+            super(s, i);
+            eta = j;
+        }
+    }
+
+    public static class cognomi extends Enum
+    {
+
+        public static final cognomi[] values()
+        {
+            return (cognomi[])_2B_VALUES.clone();
+        }
+
+        public static cognomi valueOf(String s)
+        {
+            cognomi acognomi[] = _2B_VALUES;
+            int i = acognomi.length;
+            for(int j = 0; j < i; j++)
+            {
+                cognomi cognomi1 = acognomi[j];
+                if(cognomi1.name().equals(s))
+                    return cognomi1;
+            }
+
+            throw new IllegalArgumentException(s);
+        }
+
+        static final String qualcosa()
+        {
+            return "ciao";
+        }
+
+        public volatile int compareTo(Enum enum)
+        {
+            return super.compareTo((cognomi)enum);
+        }
+
+        public static final native cognomi rossi;
+        public static final native cognomi bianchi;
+        public static final native cognomi verdi;
+        private static final cognomi _2B_VALUES[];
+
+        static 
+        {
+            rossi = new cognomi("rossi", 0);
+            bianchi = new cognomi("bianchi", 1);
+            verdi = new cognomi("verdi", 2);
+            _2B_VALUES = (new cognomi[] {
+                rossi, bianchi, verdi
+            });
+        }
+
+        public cognomi(String s, int i)
+        {
+            super(s, i);
+        }
+    }
+
+    public static class nomi extends Enum
+    {
+
+        public static final nomi[] values()
+        {
+            return (nomi[])_2B_VALUES.clone();
+        }
+
+        public static nomi valueOf(String s)
+        {
+            nomi anomi[] = _2B_VALUES;
+            int i = anomi.length;
+            for(int j = 0; j < i; j++)
+            {
+                nomi nomi1 = anomi[j];
+                if(nomi1.name().equals(s))
+                    return nomi1;
+            }
+
+            throw new IllegalArgumentException(s);
+        }
+
+        public volatile int compareTo(Enum enum)
+        {
+            return super.compareTo((nomi)enum);
+        }
+
+        public static final native nomi matteo;
+        public static final native nomi carlo;
+        public static final native nomi raffaele;
+        private static final nomi _2B_VALUES[];
+
+        static 
+        {
+            matteo = new nomi("matteo", 0);
+            carlo = new nomi("carlo", 1);
+            raffaele = new nomi("raffaele", 2);
+            _2B_VALUES = (new nomi[] {
+                matteo, carlo, raffaele
+            });
+        }
+
+        public nomi(String s, int i)
+        {
+            super(s, i);
+        }
+    }
+
+
+    public enumTest()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        System.out.println(nomi.matteo);
+        System.out.println(1);
+        System.out.println(cognomi.rossi);
+        System.out.println(cognomi.qualcosa());
+        System.out.println(nomieta.matteo.eta());
+    }
+
+    public static final int matteo = 0;
+    public static final int carlo = 1;
+    public static final int raffaele = 2;
+}

@@ -1,0 +1,32 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Demo.java
+
+import java.io.PrintStream;
+import java.util.Vector;
+
+public class Demo extends Vector
+{
+
+    public static void main(String args[])
+    {
+        Demo d = new Demo();
+        d.go();
+        Logger.ajc$interMethodDispatch1$Logger$Demo$prova(d);
+    }
+
+    public Demo()
+    {
+    }
+
+    public void go()
+    {
+        System.out.println("Ciao");
+    }
+
+    public void ajc$interMethodDispatch2$$prova()
+    {
+        Logger.ajc$interMethod$Logger$Demo$prova(this);
+    }
+}

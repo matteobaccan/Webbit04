@@ -1,0 +1,21 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   impo2.java
+
+import java.io.PrintStream;
+
+public class impo2
+{
+
+    public impo2()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        byte byte0 = 10;
+        byte byte1 = 20;
+        System.out.println(Math.max(byte0, byte1));
+    }
+}

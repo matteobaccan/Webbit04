@@ -1,0 +1,26 @@
+// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   forTest.java
+
+import java.io.PrintStream;
+
+public class forTest
+{
+
+    public forTest()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        String args1[] = args;
+        int i = args1.length;
+        for(int j = 0; j < i; j++)
+        {
+            String s = args1[j];
+            System.out.println(s);
+        }
+
+    }
+}
