@@ -1,6 +1,6 @@
 # Webbit04
 
-Slide del mio intervento al Webbit04 
+Slide dei miei interventi al Webbit04 di Padova e Milano
 
 ## Introduzione alla programmazione aop con aspectj
 
